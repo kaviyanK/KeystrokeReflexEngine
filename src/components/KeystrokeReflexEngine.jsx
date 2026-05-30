@@ -5,16 +5,16 @@ import GameScreen from "./GameScreen";
 import ResultScreen from "./ResultScreen";
 
 const DEFAULT_WORDS = [
-  "sw!ft",
-  "bl@z3",
-  "c0d3",
-  "f0rg3",
-  "p!x3l",
-  "cr4ft",
-  "l0g!c",
-  "sh@rp",
-  "m4$h",
-  "numb3r5",
+  "Swift",
+  "Blaze",
+  "Code",
+  "Forge",
+  "Pixel",
+  "Craft",
+  "Logic",
+  "Sharp",
+  "Mesh",
+  "Numbers",
 ];
 const TOTAL_ROUNDS = 10;
 const ROUND_DURATION = 3000;

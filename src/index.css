@@ -10,10 +10,10 @@
   --wrong-glow: rgba(239, 68, 68, 0.4);
   --missed: #f59e0b;
   --missed-glow: rgba(245, 158, 11, 0.4);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --text-dark: #cbd5e1;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-dark: #e2e8f0;
   --border-muted: #334155;
   --tag-bg: #334155;
   --tag-border: #475569;
@@ -52,12 +52,13 @@ body {
 }
 
 .badge {
-  font-size: 11px;
-  letter-spacing: 4px;
-  color: var(--text-muted);
-  border: 1px solid var(--border-muted);
-  padding: 4px 12px;
-  border-radius: 2px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--text-secondary);
+  border: 1px solid var(--text-muted);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-weight: 600;
 }
 
 .title {
@@ -93,11 +94,12 @@ body {
 }
 
 .label {
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: var(--text-muted);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
   display: block;
   margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .textarea {
@@ -240,9 +242,10 @@ body {
 }
 
 .score-label {
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+  font-weight: 600;
 }
 
 .score-value {
@@ -395,9 +398,10 @@ body {
 }
 
 .stat-label {
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+  font-weight: 600;
 }
 
 .history-grid {
