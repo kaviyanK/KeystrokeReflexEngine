@@ -4,11 +4,7 @@ export function pickRandom(arr) {
 
 export function randomCharFromWords(words) {
   const word = pickRandom(words);
-  let char = pickRandom(word.split(""));
-  if (/[a-zA-Z]/.test(char)) {
-    char = Math.random() > 0.5 ? char.toUpperCase() : char.toLowerCase();
-  }
-  return char;
+  return pickRandom(word.split(""));
 }
 
 export function isPrintable(key) {

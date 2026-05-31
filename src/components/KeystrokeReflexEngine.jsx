@@ -5,16 +5,16 @@ import GameScreen from "./GameScreen";
 import ResultScreen from "./ResultScreen";
 
 const DEFAULT_WORDS = [
-  "Swift",
-  "Blaze",
-  "Code",
-  "Forge",
-  "Pixel",
-  "Craft",
-  "Logic",
-  "Sharp",
-  "Mesh",
-  "Numbers",
+  "swift",
+  "blaze",
+  "code",
+  "forge",
+  "pixel",
+  "craft",
+  "logic",
+  "sharp",
+  "mash",
+  "numbers",
 ];
 const TOTAL_ROUNDS = 10;
 const ROUND_DURATION = 3000;
@@ -35,7 +35,7 @@ export default function KeystrokeReflexEngine() {
   const [wrong, setWrong] = useState(0);
   const [missed, setMissed] = useState(0);
   const [timeLeft, setTimeLeft] = useState(3);
-  const [feedback, setFeedback] = useState(null); // "correct" | "wrong" | "missed"
+  const [feedback, setFeedback] = useState(null); 
   const [roundHistory, setRoundHistory] = useState([]);
   const [animKey, setAnimKey] = useState(0);
 
@@ -47,7 +47,7 @@ export default function KeystrokeReflexEngine() {
   const parseWords = useCallback((input) => {
     const parsed = input
       .split(/[\s,]+/)
-      .map((w) => w.trim())
+      .map((w) => w.trim().toLowerCase())
       .filter((w) => w.length > 0);
     return [...new Set(parsed)];
   }, []);
@@ -59,7 +59,7 @@ export default function KeystrokeReflexEngine() {
     }
   }, [round, screen]);
 
-  // Initialize and run the round
+  //  run the round
   const beginRound = useCallback((roundIndex, w, prevChar = null) => {
     clearInterval(timerRef.current);
     clearInterval(countdownRef.current);
@@ -88,7 +88,7 @@ export default function KeystrokeReflexEngine() {
     timerRef.current = setTimeout(() => {
       clearInterval(countdownRef.current);
       if (!hasKeyRef.current) {
-        // Round timed out (missed)
+
         hasKeyRef.current = true;
         setFeedback("missed");
         setScore((s) => s - 1);
@@ -148,8 +148,8 @@ export default function KeystrokeReflexEngine() {
       clearTimeout(timerRef.current);
       clearInterval(countdownRef.current);
 
-      const pressed = e.key;
-      const target = currentChar;
+      const pressed = e.key.toLowerCase();
+      const target = currentChar.toLowerCase();
       const isCorrect = pressed === target;
 
       setFeedback(isCorrect ? "correct" : "wrong");
@@ -185,7 +185,7 @@ export default function KeystrokeReflexEngine() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [screen, currentChar, round, words, beginRound]);
 
-  // Clean up timers on unmount
+  // Clean up timers 
   useEffect(() => {
     return () => {
       clearTimeout(timerRef.current);

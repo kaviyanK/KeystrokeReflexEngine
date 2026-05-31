@@ -90,7 +90,7 @@ export default function GameScreen({
           }}
         >
           <span className="char-text" style={{ color: feedbackColor }}>
-            {currentChar}
+            {currentChar.toUpperCase()}
           </span>
         </div>
 
@@ -101,7 +101,7 @@ export default function GameScreen({
           >
             {feedback === "correct" && "✓ CORRECT"}
             {feedback === "wrong" && "✗ WRONG"}
-            {feedback === "missed" && "⏱ MISSED"}
+            {feedback === "missed" && "⏱️ MISSED"}
           </div>
         )}
 
